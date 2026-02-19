@@ -1,0 +1,41 @@
+# RAIDD log metadata. Source of truth for rendered docs/governance/raid.md.
+# Schema: project, title, status, version, created, updated, depends_on,
+# review_schedule, changelog (list of { date, change, changed_by }), nav_previous, nav_next.
+project: DocForge
+title: RAIDD Log
+status: draft
+version: "0.2"
+created: "2026-02-19"
+updated: "2026-02-20"
+depends_on:
+  - docs/strategic/solution-concept.md
+  - docs/conceptual/conops.md
+  - docs/conceptual/prd-lean.md
+  - NOTES.md
+
+review_schedule:
+  - "Weekly during active development"
+  - "Monthly during planning"
+  - "Before major milestones or releases"
+  - "When new risks, issues, or decisions arise"
+
+# Changelog entries: newest first. Append new rows when updating RAIDD.
+changelog:
+  - date: "2026-02-20"
+    change: "Concept refactor: DEC-009 (Pandoc format), DEC-010 (Phase 0 local-first), DEC-011 (TipTap/Electron/Tauri); R-007, R-008; R-003/R-005 phase applicability"
+    changed_by: REFACTOR-PLAN
+  - date: "2026-02-19"
+    change: "YAML/frontmatter audit: version on ADR template, depends_on on docs per dependency map, meta schema comment"
+    changed_by: Project
+  - date: "2026-02-19"
+    change: "RAIDD as code: YAML source, generator script, raidd-management.mdc"
+    changed_by: Project
+  - date: "2026-02-19"
+    change: "Expanded to full RAIDD; added Issues, Decisions; aligned with Between best practices"
+    changed_by: Project
+  - date: "2026-02-19"
+    change: "Initial RAID log (stub)"
+    changed_by: Project
+
+nav_previous: "[PRD (Lean)](../conceptual/prd-lean.md)"
+nav_next: "[ADR Log](../architectural/adrs/README.md)"

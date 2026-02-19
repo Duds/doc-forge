@@ -1,0 +1,53 @@
+---
+description: Frontmatter standards for DocForge markdown documents
+alwaysApply: false
+---
+# Frontmatter Standards
+
+DocForge project documents use a consistent YAML frontmatter format. This aligns with the docforge-drafter skill and the artefact hierarchy.
+
+## Required Fields
+
+All project documents in `docs/` must include:
+
+- **title**: Document title (required)
+- **project**: `DocForge`
+- **status**: One of `stub`, `draft`, `approved`, or `template` (for templates only)
+- **version**: Semantic version (e.g. `0.1`)
+- **created**: Creation date in **YYYY-MM-DD** (ISO format for machine readability)
+
+## Optional Fields
+
+- **updated**: Last update date (YYYY-MM-DD)
+- **author**: Author name if known
+- **depends_on**: List of upstream document paths (e.g. `docs/strategic/solution-concept.md`) — used when the doc is derived from others
+
+## Standard Frontmatter Block
+
+```yaml
+---
+title: [Document Title]
+project: DocForge
+status: draft
+version: 0.1
+created: YYYY-MM-DD
+author: [if known]
+depends_on:
+  - docs/path/to/upstream.md
+---
+```
+
+## Status Values
+
+- **stub**: Scaffold only; content not yet written.
+- **draft**: Content in progress; not yet approved.
+- **approved**: Reviewed and accepted.
+- **template**: Template file (e.g. ADR-0000); do not use for normal docs.
+
+## Link Standards
+
+Internal links in the body use relative paths and standard Markdown: `[Link Text](path/to/file.md)`. See the markdown-links rule. The `depends_on` field is for upstream dependency traceability, not a replacement for in-document links.
+
+## Governance Documents (RAIDD)
+
+RAIDD and similar governance docs use the same frontmatter. They do not require a `type` field; risks, assumptions, issues, dependencies, and decisions are structured in the document body (tables with IDs), not in frontmatter.

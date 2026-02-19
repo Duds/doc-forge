@@ -1,0 +1,60 @@
+# Assumptions. ID format: A-XXX. validated: Yes | No | Partially | Reasonable.
+# status: Open | Validated | Invalidated
+# Optional: date_validated
+assumptions:
+  - id: A-001
+    assumption: "Target market (professional services, government) prefers server-hosted over local-first"
+    validated: "No"
+    impact_if_false: "Rearchitect deployment and collaboration"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+  - id: A-002
+    assumption: "Target users will accept a new authoring tool if export quality is high"
+    validated: "No"
+    impact_if_false: "Pivot value proposition or distribution"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+  - id: A-003
+    assumption: "DOCX and PPTX remain dominant distribution formats for target market"
+    validated: Reasonable
+    impact_if_false: "Minimal; export format can be extended"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+  - id: A-004
+    assumption: "Australian-region frontier LLM APIs (e.g. Azure Australia East) satisfy government data sovereignty for most agencies"
+    validated: "Partially (Azure enterprise agreements exist)"
+    impact_if_false: "May need self-hosted model earlier for some agencies"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+  - id: A-005
+    assumption: "Professional services onboarding engagement (clause library import) is acceptable to initial target accounts"
+    validated: "No"
+    impact_if_false: "Higher friction; slower sales cycles"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+  - id: A-006
+    assumption: "Export fidelity ceiling (professionally acceptable without manual correction) is achievable with current DOCX/PPTX libraries"
+    validated: "No — highest technical risk"
+    impact_if_false: "Bespoke rendering pipeline; significant cost and timeline"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+  - id: A-007
+    assumption: "Branch/merge collaboration, surfaced as Send for Review / Incorporate Comments, is sufficient for 95%+ of target workflows"
+    validated: "Supported by ConOps decision"
+    impact_if_false: "Significant UX rework if wrong"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+  - id: A-008
+    assumption: "LLM APIs will remain affordable for document-scale generation"
+    validated: "No"
+    impact_if_false: "Affects unit economics and pricing"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"

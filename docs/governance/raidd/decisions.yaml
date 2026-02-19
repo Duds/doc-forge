@@ -1,0 +1,91 @@
+# Decisions. ID format: DEC-XXX. status: Proposed | Accepted | Deprecated | Superseded.
+# Optional: superseded_by (ADR or DEC-XXX)
+decisions:
+  - id: DEC-001
+    decision: "Server-hosted primary; not local-first at launch"
+    rationale: "Target market wants documents on firm/agency infrastructure; collaboration and DMS integration require server-hosted"
+    alternatives_considered: "Local-first, Electron desktop"
+    impact: "High — deployment and collaboration model"
+    decision_maker: "ConOps session"
+    date_made: "2026-02-19"
+    status: "Accepted for Phase 1+; superseded for Phase 0 by DEC-010"
+  - id: DEC-002
+    decision: "Pluggable LLM providers; Australian-region API at launch"
+    rationale: "Data sovereignty for government; provider, region, model as config"
+    alternatives_considered: "API-first only; local-only"
+    impact: "High — architecture and government path"
+    decision_maker: NOTES
+    date_made: "2026-02-19"
+    status: "Accepted — ADR required before gov pilot"
+  - id: DEC-003
+    decision: "DMS integration order: iManage → NetDocuments → Content Manager"
+    rationale: "Market coverage (legal then government); API maturity"
+    alternatives_considered: "Single DMS; different order"
+    impact: "Medium — Tier 2 roadmap"
+    decision_maker: NOTES
+    date_made: "2026-02-19"
+    status: Accepted
+  - id: DEC-004
+    decision: "Document types: three full-clause, three to five skeleton-only at launch"
+    rationale: "Full-clause: Engagement Letter, Board Paper, Cabinet Submission. Skeleton-only: Strategic Review, Proposal/Tender, Briefing Note"
+    alternatives_considered: "Fewer types; more types"
+    impact: "High — scope and clause library"
+    decision_maker: NOTES
+    date_made: "2026-02-19"
+    status: Accepted
+  - id: DEC-005
+    decision: "Clause library onboarding: professional services engagement at launch; self-service import Tier 2"
+    rationale: "Initial accounts need structured import from Word/SharePoint; self-service later"
+    alternatives_considered: "Self-service from day one"
+    impact: "High — onboarding and GTM"
+    decision_maker: NOTES
+    date_made: "2026-02-19"
+    status: Accepted
+  - id: DEC-006
+    decision: "Branch/merge surfaced as Send for Review / Incorporate Comments; branch semantics not exposed"
+    rationale: "Sufficient for 95%+ workflows; simpler UX"
+    alternatives_considered: "Expose branch semantics to power users"
+    impact: "Medium — collaboration UX"
+    decision_maker: "ConOps session"
+    date_made: "2026-02-19"
+    status: Accepted
+  - id: DEC-007
+    decision: "Web application (server-hosted); Electron deprioritised"
+    rationale: "Aligns with server-hosted; target market does not require desktop-native"
+    alternatives_considered: "Electron, local-first"
+    impact: "High — GUI and deployment"
+    decision_maker: "NOTES / ConOps"
+    date_made: "2026-02-19"
+    status: Accepted
+  - id: DEC-008
+    decision: "DOCX Track Changes markup generated on export for reviewer compatibility only"
+    rationale: "Interoperability with Word-based reviewers; not used inside DocForge"
+    alternatives_considered: "No Track Changes; full internal Track Changes"
+    impact: "Medium — export and collaboration"
+    decision_maker: "ConOps / PRD"
+    date_made: "2026-02-19"
+    status: Accepted
+  - id: DEC-009
+    decision: "Backing format is Pandoc Markdown; not custom DOM"
+    rationale: "Pandoc already supports fenced divs, YAML frontmatter, footnotes, citations, cross-refs. No format invention required. Supersedes implied custom YAML/JSON in original solution concept"
+    alternatives_considered: "Custom document object model; Quarto format"
+    impact: "High — storage and export architecture"
+    decision_maker: "REFACTOR-PLAN / concept evolution"
+    date_made: "2026-02-20"
+    status: Accepted
+  - id: DEC-010
+    decision: "Phase 0 is local-first personal tool; server-hosted is Phase 1+"
+    rationale: "Phase 0 primary user is the author; solve own problem first. Local-first aligns with personal tool scope. Server-hosted required for collaboration, clause library, DMS; deferred to Phase 1+"
+    alternatives_considered: "Server-hosted from Phase 0"
+    impact: "High — deployment and Phase 0 scope"
+    decision_maker: "REFACTOR-PLAN / concept evolution"
+    date_made: "2026-02-20"
+    status: Accepted
+  - id: DEC-011
+    decision: "Phase 0 GUI base is TipTap/ProseMirror wrapped in Electron or Tauri"
+    rationale: "ProseMirror is Pandoc-compatible; TipTap provides extension ecosystem. Electron/Tauri for desktop deployment. ADR required to choose Electron vs Tauri"
+    alternatives_considered: "Web-only; Slate; Lexical"
+    impact: "High — GUI and desktop stack"
+    decision_maker: "REFACTOR-PLAN / concept evolution"
+    date_made: "2026-02-20"
+    status: "Proposed — ADR pending"

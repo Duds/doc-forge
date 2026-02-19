@@ -1,0 +1,44 @@
+# Dependencies. ID format: D-XXX. type: Internal | External.
+# status: Open | Contracted | Resolved | Blocked
+# Optional: date_resolved
+dependencies:
+  - id: D-001
+    dependency: "LLM provider API (Australian-region at launch — Azure Australia East or equivalent)"
+    type: External
+    provider: "Cloud provider / enterprise agreement"
+    impact_if_delayed: "High — blocks AI features and government path"
+    owner: TBD
+    status: "Not contracted"
+    date_added: "2026-02-19"
+  - id: D-002
+    dependency: "DOCX/PPTX export library selection"
+    type: Internal
+    provider: "Architecture decision"
+    impact_if_delayed: "High — blocks export pipeline"
+    owner: TBD
+    status: "Pending ADR"
+    date_added: "2026-02-19"
+  - id: D-003
+    dependency: "Government security certification (ISM, IRAP) for government pilot"
+    type: External
+    provider: "Assessor / agency"
+    impact_if_delayed: "High — blocks government pilot"
+    owner: TBD
+    status: "Not started"
+    date_added: "2026-02-19"
+  - id: D-004
+    dependency: "Enterprise IAM integration (SAML/OIDC)"
+    type: External
+    provider: "Customer / IdP"
+    impact_if_delayed: "High — required for target market"
+    owner: TBD
+    status: "Not started"
+    date_added: "2026-02-19"
+  - id: D-005
+    dependency: "BidWriter overlap assessment"
+    type: Internal
+    provider: "Product / programme"
+    impact_if_delayed: "Medium — affects scope and roadmap"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"

@@ -1,0 +1,60 @@
+---
+description: Markdown link standards for DocForge document graph
+alwaysApply: false
+---
+# Markdown Link Standards
+
+## Link Format
+
+All internal links use standard Markdown link syntax:
+
+```markdown
+[Link Text](path/to/file.md)
+```
+
+## Relative Paths
+
+- Use relative paths from the document location.
+- Use `../` to navigate up (e.g. from `docs/conceptual/` to `docs/strategic/`).
+- Same-directory: `[ConOps](conops.md)` or `[PRD](prd-lean.md)`.
+
+## DocForge-Specific Examples
+
+### Same directory (e.g. in `docs/conceptual/`)
+```markdown
+[ConOps](conops.md)
+[PRD (Lean)](prd-lean.md)
+```
+
+### Parent directory (e.g. from `docs/conceptual/` to strategic)
+```markdown
+[Solution Concept](../strategic/solution-concept.md)
+```
+
+### Sibling or other layer (e.g. from `docs/conceptual/` to architectural)
+```markdown
+[High-Level Architecture](../architectural/hla.md)
+[ADR Log](../architectural/adrs/README.md)
+```
+
+### Root
+```markdown
+[README](../../README.md)
+```
+
+## Link Types
+
+- **Internal**: Link to other Markdown files; use descriptive link text; include `.md` extension.
+- **Section anchors**: `[Section Name](#section-name)` (headings become lowercase, spaces to hyphens).
+- **External**: Full URLs: `[Link Text](https://example.com)`.
+
+## Prohibited
+
+- Backtick-only references: `` `file.md` `` (use a proper link).
+- Bare paths without brackets: `file.md` (use `[description](file.md)`).
+
+## Document Graph and Navigation
+
+- Each doc should be reachable via links from README or from other docs in its layer.
+- End documents with navigation: *Previous: [Upstream](path) · Next: [Downstream](path)* (see docforge-drafter).
+- Frontmatter `depends_on` lists upstream documents read for drafting; use it for traceability, not as a substitute for in-body links.

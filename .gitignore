@@ -1,0 +1,7 @@
+# Virtual environment (used for RAIDD generator)
+.venv/
+
+# OS and editor
+.DS_Store
+*.swp
+*.swo

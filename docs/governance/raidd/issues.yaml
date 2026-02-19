@@ -1,0 +1,60 @@
+# Issues. ID format: I-XXX. severity: Low | Medium | High | Critical.
+# status: Open | In progress | Resolved | Deferred
+# Optional: date_resolved, resolution
+issues:
+  - id: I-001
+    issue: "Export fidelity technical feasibility unvalidated"
+    severity: High
+    impact: "Blocks customer commitment on deliverable quality"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+    resolution: null
+  - id: I-002
+    issue: "ADR for LLM provider pluggability and data sovereignty required before any government pilot"
+    severity: High
+    impact: "Blocks government engagement"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+    resolution: null
+  - id: I-003
+    issue: "Clause library onboarding model undefined (pricing, resourcing, partner vs in-house)"
+    severity: Medium
+    impact: "Blocks go-to-market planning"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+    resolution: null
+  - id: I-004
+    issue: "Minimum viable skeleton quality and brief-to-skeleton UX not tested with personas"
+    severity: Medium
+    impact: "Risk of poor fit for skeleton assembly value prop"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+    resolution: null
+  - id: I-005
+    issue: "DOCX/PPTX export library selection not decided"
+    severity: Medium
+    impact: "Blocks export pipeline implementation"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+    resolution: "Pending ADR"
+  - id: I-006
+    issue: "Relationship to BidWriter project not assessed (overlap, synergy, consolidation)"
+    severity: Medium
+    impact: "Affects roadmap and backlog"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+    resolution: null
+  - id: I-007
+    issue: "Monetisation model unresolved (SaaS vs perpetual vs open-core)"
+    severity: Medium
+    impact: "Affects pricing and open-source format strategy"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+    resolution: null

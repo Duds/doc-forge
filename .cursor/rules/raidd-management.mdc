@@ -1,0 +1,58 @@
+---
+description: RAIDD as code — where to edit, schema, and how to regenerate raid.md
+alwaysApply: false
+globs: ["docs/governance/raidd/**", "docs/governance/raid.md", "scripts/generate_raidd.py"]
+---
+# RAIDD management (RAIDD as code)
+
+DocForge keeps **Risks, Assumptions, Issues, Dependencies, and Decisions** in structured YAML. The rendered log is generated from that source. Follow this rule when adding, updating, or discussing RAIDD items.
+
+## Source of truth
+
+- **Location:** `docs/governance/raidd/`
+- **Files:** `meta.yaml`, `risks.yaml`, `assumptions.yaml`, `issues.yaml`, `dependencies.yaml`, `decisions.yaml`
+- **Rendered doc:** `docs/governance/raid.md` is **generated**. Do not edit it by hand; edit the YAML and regenerate.
+
+## Workflow
+
+1. **Edit** the appropriate YAML file in `docs/governance/raidd/`.
+2. **Regenerate** the Markdown: from repo root run  
+   `python3 scripts/generate_raidd.py`  
+   (or ` .venv/bin/python scripts/generate_raidd.py` if using a venv).  
+   Dependencies: `pip install -r scripts/requirements.txt` (PyYAML).
+3. **Changelog:** When making substantive changes, append an entry to `meta.yaml` under `changelog` (date, change, changed_by).
+
+## Schema (by file)
+
+**risks.yaml** — List under `risks:`:
+- `id` (e.g. R-001), `risk`, `likelihood` (Low | Medium | High), `impact` (Low | Medium | High | Critical), `mitigation`, `owner`, `status` (Open | Mitigating | Resolved | Accepted), `date_added`; optional `date_resolved`.
+
+**assumptions.yaml** — List under `assumptions:`:
+- `id` (e.g. A-001), `assumption`, `validated` (use quoted "No" / "Yes" or Reasonable, Partially, etc. to avoid YAML boolean), `impact_if_false`, `owner`, `status`, `date_added`; optional `date_validated`.
+
+**issues.yaml** — List under `issues:`:
+- `id` (e.g. I-001), `issue`, `severity`, `impact`, `owner`, `status`, `date_added`, `resolution` (null or string); optional `date_resolved`.
+
+**dependencies.yaml** — List under `dependencies:`:
+- `id` (e.g. D-001), `dependency`, `type` (Internal | External), `provider`, `impact_if_delayed`, `owner`, `status`, `date_added`; optional `date_resolved`.
+
+**decisions.yaml** — List under `decisions:`:
+- `id` (e.g. DEC-001), `decision`, `rationale`, `alternatives_considered`, `impact`, `decision_maker`, `date_made`, `status` (Proposed | Accepted | Deprecated | Superseded); optional `superseded_by`.
+
+**meta.yaml** — Single object: `project`, `title`, `status`, `version`, `created`, `updated`, `depends_on` (list), `review_schedule` (list of strings), `changelog` (list of `{ date, change, changed_by }`), `nav_previous`, `nav_next`.
+
+## ID conventions
+
+- Use the next free number: R-007, A-009, I-008, D-006, DEC-009.
+- Do not renumber or reuse IDs when items are resolved or deprecated; update `status` (and optional resolution/date) instead.
+
+## Quality
+
+- Be specific about **likelihood** and **impact**; avoid defaulting everything to "medium".
+- Mark assumptions as validated vs unvalidated clearly (use "No", "Partially", "Reasonable", etc.).
+- When adding a decision that should be reflected in an ADR, add or reference the ADR in the decision text and ensure the ADR log is updated separately.
+
+## Reference
+
+- Full layout and regenerate instructions: `docs/governance/raidd/README.md`
+- Generator script: `scripts/generate_raidd.py`

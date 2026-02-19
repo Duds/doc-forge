@@ -1,0 +1,103 @@
+---
+description: Australian spelling, measures, and date standards
+alwaysApply: true
+---
+# Australian Standards
+
+## Spelling
+
+Always use Australian English spelling (UK English conventions). Common differences from US English:
+
+### -ise/-ize Endings
+- Use **-ise** endings: organise, categorise, recognise, optimise, analyse, finalise, prioritise, standardise, utilise, authorise, characterise, emphasise, minimise, maximise, specialise, stabilise, visualise, realise
+- **Never** use -ize endings (organize, categorize, recognize, etc.)
+
+### -our/-or Endings
+- Use **-our** endings: colour, honour, favour, behaviour, labour, neighbour, humour, flavour, armour, endeavour
+- **Never** use -or endings (color, honor, favor, etc.)
+
+### -re/-er Endings
+- Use **-re** endings: centre, theatre, metre, litre, fibre, calibre, sombre
+- **Never** use -er endings (center, theater, meter, liter, fiber, etc.)
+
+### -ogue/-og Endings
+- Use **-ogue** endings: dialogue, catalogue, analogue, monologue
+- **Never** use -og endings (dialog, catalog, analog, etc.)
+
+### Other Common Differences
+- **defence** (not defense)
+- **licence** (noun) / **license** (verb) - note: both spellings exist but with different meanings
+- **practice** (noun) / **practise** (verb) - note: both spellings exist but with different meanings
+- **programme** (for TV/broadcast) / **program** (for computer software)
+- **sceptical** (not skeptical)
+- **sulphur** (not sulfur) - though "sulfur" is also acceptable in scientific contexts
+- **travelled, travelling, traveller** (not traveled, traveling, traveler)
+- **cancelled, cancelling** (not canceled, canceling)
+- **labelled, labelling** (not labeled, labeling)
+
+## Measurements
+
+Always use metric units (SI units):
+
+- **Distance**: metres (m), kilometres (km), centimetres (cm), millimetres (mm)
+- **Weight/Mass**: kilograms (kg), grams (g), tonnes (not tons)
+- **Volume**: litres (L), millilitres (mL)
+- **Temperature**: Celsius (degrees C)
+- **Area**: square metres (m2), hectares (ha)
+- **Speed**: kilometres per hour (km/h)
+
+**Never** use imperial units (feet, inches, pounds, ounces, miles, Fahrenheit, etc.) unless specifically required by context (e.g., historical references, specific industry standards).
+
+## Dates
+
+Always use Australian date format:
+
+- **Format**: DD/MM/YYYY or DD-MM-YYYY
+- **Examples**: 
+  - 15/01/2024 (15th January 2024)
+  - 31-12-2023 (31st December 2023)
+- **Written format**: 15 January 2024 (day month year, no ordinal suffixes in formal writing)
+
+**Never** use US format (MM/DD/YYYY) in prose. **Exception:** Use ISO format (YYYY-MM-DD) for frontmatter fields (`created`, `updated`), RAIDD/ADR date columns, and any machine-readable or sortable dates — this is required for consistency across the DocForge docs.
+
+## Time
+
+- Use 24-hour time format: 14:30 (not 2:30 PM)
+- Use "am" and "pm" in lowercase when 12-hour format is necessary
+
+## Currency
+
+- Use Australian dollar format: $AUD or AUD $ or $ (with context)
+- Format: $1,234.56 (thousand separator: comma, decimal: period)
+
+## Language Conventions
+
+- Use Australian English terminology:
+  - **mobile phone** (not cell phone)
+  - **petrol** (not gasoline)
+  - **boot** (of car, not trunk)
+  - **bonnet** (of car, not hood)
+  - **lift** (not elevator)
+  - **rubbish** (not garbage/trash)
+  - **bin** (not trash can)
+  - **tap** (not faucet)
+  - **torch** (not flashlight)
+  - **biscuit** (not cookie - though cookie is acceptable for web cookies)
+  - **chips** (not fries - though fries is acceptable for specific contexts)
+
+## Regional Considerations
+
+- Use Australian time zones (AEST, AEDT, AWST, ACST, etc.)
+- Consider Australian public holidays
+- Use Australian postal code format (4 digits)
+- Use Australian phone number format (+61 X XXXX XXXX)
+
+## Enforcement
+
+This rule applies to:
+- All documentation
+- Code comments
+- User-facing text
+- Configuration files
+- Commit messages
+- Pull request descriptions

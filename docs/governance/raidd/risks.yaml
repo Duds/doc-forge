@@ -1,0 +1,68 @@
+# Risks. ID format: R-XXX. Likelihood: Low | Medium | High. Impact: Low | Medium | High | Critical.
+# status: Open | Mitigating | Resolved | Accepted
+# Optional: date_resolved
+risks:
+  - id: R-001
+    risk: "DOCX/PPTX export fidelity insufficient for professional use (manual correction required)"
+    likelihood: High
+    impact: Critical
+    mitigation: "Technical spike against Engagement Letter, Board Paper, Cabinet Submission before customer commitment; validate with selected export library"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+  - id: R-002
+    risk: "LLM hallucination in clause-adjacent or variable content"
+    likelihood: Medium
+    impact: High
+    mitigation: "Deterministic clause insertion only; human confirmation for all AI-generated content; AI scoped to variable zones only"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+  - id: R-003
+    risk: "Behaviour change resistance — users revert to ad hoc formatting"
+    likelihood: Low
+    impact: Low
+    mitigation: "Phase 1+ risk; primary user is also designer in Phase 0, so resistance is minimal. For Phase 1+: template-first UX; style picker primary; character formatting behind friction notice"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+  - id: R-004
+    risk: "Microsoft adds competing AI-native document mode to Word"
+    likelihood: Medium
+    impact: High
+    mitigation: "Accelerate time to market; deepen vertical integration and compliance story; InDesign positioning (authoring vs distribution)"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+  - id: R-005
+    risk: "Government procurement delayed by security certification (ISM, IRAP)"
+    likelihood: High
+    impact: Medium
+    mitigation: "Phase 2 risk; not relevant to Phase 0 or Phase 1. Complete ADR for LLM provider and data sovereignty before government engagement; plan certification into roadmap"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+  - id: R-006
+    risk: "Clause library onboarding friction slows initial sales"
+    likelihood: Medium
+    impact: Medium
+    mitigation: "Validate with 1–2 target accounts; define pricing and partner model before go-to-market"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-19"
+  - id: R-007
+    risk: "Pandoc export fidelity insufficient — print stylesheet and reference DOCX may not produce professional output without significant investment"
+    likelihood: Medium
+    impact: High
+    mitigation: "Invest in CSS and reference DOCX template; validate against representative document types before Phase 0 completion"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-20"
+  - id: R-008
+    risk: "GUI complexity for Pandoc semantic blocks — rendering fenced divs (e.g. :::callout) as WYSIWYG nodes in TipTap requires custom node types; non-trivial"
+    likelihood: Medium
+    impact: High
+    mitigation: "Technical spike on TipTap custom nodes for Pandoc fenced divs; consider progressive enhancement (raw block initially) if full WYSIWYG is deferred"
+    owner: TBD
+    status: Open
+    date_added: "2026-02-20"

@@ -1,0 +1,136 @@
+---
+title: High-Level Architecture
+project: DocForge
+status: draft
+version: 0.2
+created: 2026-02-19
+updated: 2026-02-20
+depends_on:
+  - docs/architectural/principles.md
+  - docs/strategic/solution-concept.md
+---
+
+# High-Level Architecture
+
+This document describes the Phase 0 architecture. Future phases (RAG, brand manifest, clause library, server-hosted deployment) are noted where they extend or replace Phase 0 components.
+
+---
+
+## Phase 0 Architecture Overview
+
+```mermaid
+flowchart TB
+    subgraph GUI [GUI Layer]
+        Editor[TipTap Editor]
+        Wrapper[Electron or Tauri]
+    end
+    
+    subgraph Storage [Storage Layer]
+        Project[Project Folder]
+        MD[Pandoc Markdown]
+        YAML[YAML Frontmatter]
+    end
+    
+    subgraph Export [Export Pipeline]
+        Pandoc[Pandoc CLI]
+        CSS[Print Stylesheet]
+        RefDocx[Reference DOCX]
+    end
+    
+    subgraph LLM [LLM Integration]
+        API[Direct API Calls]
+        Context[Project Context]
+    end
+    
+    Editor --> Wrapper
+    Editor --> MD
+    MD --> YAML
+    MD --> Project
+    MD --> Pandoc
+    CSS --> Pandoc
+    RefDocx --> Pandoc
+    API --> Context
+    Context --> Project
+```
+
+---
+
+## GUI Layer
+
+**Responsibility.** Rich Markdown editing with semantic block support. The user authors in a Word-like interface; the output is valid Pandoc Markdown.
+
+**Technology.** TipTap (ProseMirror-based). Custom node types map to Pandoc semantic constructs: fenced divs (`:::callout`, `:::executive-summary`), headings, lists, tables, footnotes. The editor serialises to Pandoc-extended Markdown.
+
+**Deployment.** Wrapped in Electron or Tauri for desktop. Local application; no server required. Documents are files on disk in the project folder.
+
+**Does not (Phase 0).** Real-time collaboration, cloud sync, web-based deployment, branch/merge UI. Those are Phase 1+.
+
+---
+
+## Storage Layer
+
+**Responsibility.** Persist documents as Pandoc Markdown with YAML frontmatter. Organise work within a project context.
+
+**Format.** Plain-text Pandoc Markdown. YAML frontmatter for document metadata (title, author, date, custom fields). Human-readable, diff-able, version-control friendly.
+
+**Project folder schema.** Each project has a standard layout:
+
+| Folder | Purpose |
+|--------|---------|
+| `inputs/` | Source material — transcripts, research, raw notes |
+| `working/` | Drafts in progress, rough notes |
+| `context/` | Brief, constraints, project parameters |
+| `deliverables/` | Final documents ready for export |
+
+The LLM receives selected files from these folders as context when assisting. Full RAG (retrieval over the entire project) is Phase 1; Phase 0 passes context explicitly.
+
+**Does not (Phase 0).** Database, object storage, DMS integration. Files on disk only.
+
+---
+
+## Export Pipeline
+
+**Responsibility.** Produce PDF and DOCX from Markdown without manual post-processing.
+
+**Technology.** Pandoc CLI. A print stylesheet (CSS) controls PDF appearance. An optional reference DOCX template provides DOCX styling. Filters such as pandoc-crossref for captions and cross-references.
+
+**Flow.** Markdown file → Pandoc (with CSS and/or reference DOCX) → PDF or DOCX. Deterministic and reproducible. The author owns the stylesheet and template; output quality is under their control.
+
+**Does not (Phase 0).** PPTX export (Phase 1+). Custom renderer; Pandoc is the engine.
+
+---
+
+## LLM Integration (Phase 0)
+
+**Responsibility.** Provide AI assistance for drafting. The LLM receives document content and selected project context.
+
+**Model.** Direct API calls. No RAG. On each request, the client sends: current document content, brief (from context/), and optionally files from inputs/ or working/. The LLM responds with suggested content or edits.
+
+**Provider.** Pluggable (provider, region, model as config). Australian-region endpoints for data sovereignty when needed. Phase 0 assumes API-based models; local/private models are Phase 2+.
+
+**Does not (Phase 0).** RAG over project folder, clause recommendation, assembly engine. Those are Phase 1+.
+
+---
+
+## Future Layers (Phase 1+)
+
+| Component | Phase 0 | Phase 1+ |
+|-----------|---------|----------|
+| RAG over project | No | Yes |
+| Brand manifest | Print CSS + reference DOCX | Full versioned manifest |
+| Clause library | No | Yes |
+| Server-hosted | No (local-only) | Yes |
+| Collaboration | No | Branch/merge, sharing |
+| DMS integration | No | iManage, NetDocuments, Content Manager |
+
+---
+
+## Key Technology Decisions (Reference)
+
+- **Backing format:** Pandoc Markdown (DEC-009)
+- **Deployment (Phase 0):** Local-first; server-hosted Phase 1+ (DEC-010)
+- **GUI base:** TipTap/ProseMirror in Electron or Tauri (DEC-011, ADR pending)
+
+---
+
+*Previous: [Architectural Principles](principles.md) · Next: [ADRs](adrs/) · See also: [NFRs](nfrs.md)*
