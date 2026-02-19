@@ -31,6 +31,7 @@ Use the docforge-drafter skill to create or extend a target document. Follow the
 | prd-lean | docs/conceptual/prd-lean.md |
 | principles | docs/architectural/principles.md |
 | hla | docs/architectural/hla.md |
+| frs | docs/architectural/frs.md |
 | nfrs | docs/architectural/nfrs.md |
 | security-data | docs/architectural/security-data.md |
 | operating-model | docs/planning/operating-model.md |

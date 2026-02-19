@@ -26,4 +26,4 @@ depends_on:
 
 ---
 
-*See also: [NFRs](nfrs.md)*
+*See also: [FRS](frs.md), [NFRs](nfrs.md)*

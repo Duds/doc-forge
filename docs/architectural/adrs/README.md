@@ -24,8 +24,8 @@ This directory contains Architecture Decision Records for DocForge. ADRs capture
 | ADR | Title | Status | Date |
 |-----|--------|--------|------|
 | [ADR-0000](ADR-0000-template.md) | ADR Template | Template | 2026-02-19 |
-| ADR-0001 | LLM provider pluggability and data sovereignty | *Planned* | — |
-| ADR-0002 | DOCX/PPTX export library selection | *Planned* | — |
+| [ADR-0001](ADR-0001-llm-provider-pluggability.md) | LLM provider pluggability and data sovereignty | Proposed | 2026-02-20 |
+| [ADR-0002](ADR-0002-docx-export-library-selection.md) | DOCX/PPTX export library selection | Proposed | 2026-02-20 |
 | [ADR-0003](ADR-0003-tauri-desktop-framework.md) | Tauri for desktop framework | Accepted | 2026-02-20 |
 | [ADR-0004](ADR-0004-tiptap-editor-framework.md) | TipTap for editor framework | Accepted | 2026-02-20 |
 
@@ -39,6 +39,7 @@ This directory contains Architecture Decision Records for DocForge. ADRs capture
 - [RAIDD Log](../../governance/raid.md) — Decisions (DEC-*) and Issues (I-002, I-005) reference ADRs.
 - [Principles](../principles.md) — Architectural principles that ADRs should align with.
 - [HLA](../hla.md) — High-level architecture; key technology decisions pending ADRs.
+- [FRS](../frs.md), [NFRs](../nfrs.md) — Functional and non-functional requirements specifications.
 
 ---
 

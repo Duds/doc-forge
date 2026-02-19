@@ -140,4 +140,4 @@ Desktop application (Electron or Tauri). Local-first; no server required. Docume
 
 ---
 
-*Previous: [ConOps](conops.md) · Next: [High-Level Architecture](../architectural/hla.md)*
+*Previous: [ConOps](conops.md) · Next: [High-Level Architecture](../architectural/hla.md) · See also: [FRS](../architectural/frs.md), [NFRs](../architectural/nfrs.md)*

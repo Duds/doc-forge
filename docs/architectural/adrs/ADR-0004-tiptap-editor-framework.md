@@ -86,4 +86,4 @@ ProseMirror is the engine; TipTap is the API layer. TipTap provides extensions, 
 
 ---
 
-*Previous: [ADR-0003](ADR-0003-tauri-desktop-framework.md) · Next: [ADR Log](README.md)*
+*Previous: [ADR-0003](ADR-0003-tauri-desktop-framework.md) · Next: [NFRs](../nfrs.md)*

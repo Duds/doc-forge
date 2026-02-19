@@ -2,12 +2,16 @@
 title: High-Level Architecture
 project: DocForge
 status: draft
-version: 0.2
+version: 0.3
 created: 2026-02-19
 updated: 2026-02-20
 depends_on:
   - docs/architectural/principles.md
   - docs/strategic/solution-concept.md
+  - docs/architectural/adrs/ADR-0001-llm-provider-pluggability.md
+  - docs/architectural/adrs/ADR-0002-docx-export-library-selection.md
+  - docs/architectural/adrs/ADR-0003-tauri-desktop-framework.md
+  - docs/architectural/adrs/ADR-0004-tiptap-editor-framework.md
 ---
 
 # High-Level Architecture
@@ -22,7 +26,7 @@ This document describes the Phase 0 architecture. Future phases (RAG, brand mani
 flowchart TB
     subgraph GUI [GUI Layer]
         Editor[TipTap Editor]
-        Wrapper[Electron or Tauri]
+        Wrapper[Tauri]
     end
     
     subgraph Storage [Storage Layer]
@@ -59,9 +63,9 @@ flowchart TB
 
 **Responsibility.** Rich Markdown editing with semantic block support. The user authors in a Word-like interface; the output is valid Pandoc Markdown.
 
-**Technology.** TipTap (ProseMirror-based). Custom node types map to Pandoc semantic constructs: fenced divs (`:::callout`, `:::executive-summary`), headings, lists, tables, footnotes. The editor serialises to Pandoc-extended Markdown.
+**Technology.** TipTap (ProseMirror-based). Custom node types map to Pandoc semantic constructs: fenced divs (`:::callout`, `:::executive-summary`), headings, lists, tables, footnotes. The editor serialises to Pandoc-extended Markdown. See [ADR-0004](adrs/ADR-0004-tiptap-editor-framework.md).
 
-**Deployment.** Wrapped in Electron or Tauri for desktop. Local application; no server required. Documents are files on disk in the project folder.
+**Deployment.** Wrapped in Tauri for desktop. Local application; no server required. Documents are files on disk in the project folder. See [ADR-0003](adrs/ADR-0003-tauri-desktop-framework.md).
 
 **Does not (Phase 0).** Real-time collaboration, cloud sync, web-based deployment, branch/merge UI. Those are Phase 1+.
 
@@ -73,7 +77,7 @@ flowchart TB
 
 **Format.** Plain-text Pandoc Markdown. YAML frontmatter for document metadata (title, author, date, custom fields). Human-readable, diff-able, version-control friendly.
 
-**Project folder schema.** Each project has a standard layout:
+**Project folder schema.** Each project has a standard layout (optionally overridable via `docforge.yaml` in Phase 0):
 
 | Folder | Purpose |
 |--------|---------|
@@ -82,7 +86,7 @@ flowchart TB
 | `context/` | Brief, constraints, project parameters |
 | `deliverables/` | Final documents ready for export |
 
-The LLM receives selected files from these folders as context when assisting. Full RAG (retrieval over the entire project) is Phase 1; Phase 0 passes context explicitly.
+DocForge-specific format documentation (frontmatter schema, conventions) is a Phase 0 deliverable. The LLM receives selected files from these folders as context when assisting. Full RAG (retrieval over the entire project) is Phase 1; Phase 0 passes context explicitly.
 
 **Does not (Phase 0).** Database, object storage, DMS integration. Files on disk only.
 
@@ -127,10 +131,24 @@ The LLM receives selected files from these folders as context when assisting. Fu
 
 ## Key Technology Decisions (Reference)
 
-- **Backing format:** Pandoc Markdown (DEC-009)
-- **Deployment (Phase 0):** Local-first; server-hosted Phase 1+ (DEC-010)
-- **GUI base:** TipTap/ProseMirror in Electron or Tauri (DEC-011, ADR pending)
+- **Backing format:** Pandoc Markdown — human-readable, diff-able, LLM-consumable; see [principles](principles.md#1-document-is-data)
+- **Deployment (Phase 0):** Local-first; server-hosted Phase 1+; see [principles](principles.md#6-portable-format-deployment-model-evolves-with-phase)
+- **Desktop framework:** Tauri — [ADR-0003](adrs/ADR-0003-tauri-desktop-framework.md)
+- **Editor framework:** TipTap (ProseMirror) — [ADR-0004](adrs/ADR-0004-tiptap-editor-framework.md)
 
 ---
 
-*Previous: [Architectural Principles](principles.md) · Next: [ADRs](adrs/) · See also: [NFRs](nfrs.md)*
+## Open Questions
+
+### Pending ADR acceptance
+
+- **[ADR-0001](adrs/ADR-0001-llm-provider-pluggability.md)** (proposed) — LLM provider pluggability; recommends provider/region/model as config, Azure Australia East for government. Must be accepted before any government pilot. See [RAIDD I-002](../../governance/raid.md).
+- **[ADR-0002](adrs/ADR-0002-docx-export-library-selection.md)** (proposed) — Export library selection; recommends Pandoc-only for Phase 0 PDF and DOCX. Unblocks export pipeline implementation. See [RAIDD I-005, D-002](../../governance/raid.md).
+
+### Specification gaps
+
+- **Format documentation** — DocForge-specific conventions (frontmatter schema, project folder layout) are a Phase 0 deliverable per [principles](principles.md#format-documentation-and-project-conventions). The exact frontmatter schema and `docforge.yaml` format need specification before implementation.
+
+---
+
+*Previous: [Architectural Principles](principles.md) · Next: [ADRs](adrs/) · See also: [FRS](frs.md), [NFRs](nfrs.md)*

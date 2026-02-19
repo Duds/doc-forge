@@ -45,7 +45,7 @@ the artefact hierarchy:
 |-------|-----------|
 | Strategic | problem-statement, solution-concept, options-analysis, business-case, benefits-map |
 | Conceptual | conops, prd-lean |
-| Architectural | principles, hla, adrs/ADR-NNNN, nfrs, security-data |
+| Architectural | principles, hla, adrs/ADR-NNNN, frs, nfrs, security-data |
 | Planning | operating-model, roadmap, release-plan |
 | Execution | backlog, epics/EP-NNN, stories/US-NNN |
 | Governance | raid, gate-packs, change-control, benefits-tracking |
@@ -62,13 +62,14 @@ Read upstream documents before drafting the target. DocForge uses a Phase 0 → 
 - **prd-lean** → needs: solution-concept, conops (Phase 0 PRD scoped to personal tool)
 - **principles** → needs: solution-concept
 - **hla** → needs: principles, solution-concept
+- **frs** → needs: prd-lean, conops
 - **nfrs** → needs: prd-lean
 - **security-data** → needs: nfrs
 - **adrs** → needs: hla, principles
 - **operating-model** → needs: options-analysis
 - **roadmap** → needs: prd-lean, operating-model
 - **release-plan** → needs: roadmap
-- **backlog** → needs: prd-lean, roadmap
+- **backlog** → needs: prd-lean, roadmap, frs (for FR traceability)
 - **epics** → needs: backlog
 - **stories** → needs: relevant epic
 - **raid** → needs: all available upstream docs
@@ -121,12 +122,14 @@ business-case, benefits-map):
   non-goals
 - Both: flag assumptions that need validation
 
-**Architectural documents** (principles, hla, adrs, nfrs, security-data):
+**Architectural documents** (principles, hla, adrs, frs, nfrs, security-data):
 - Principles: state the principle, the rationale, and the implication for
   design decisions
 - HLA: describe each layer's responsibilities and boundaries; include what
   each layer does NOT do
 - ADRs: follow the template at `docs/architectural/adrs/ADR-0000-template.md`
+- FRS: formalise functional requirements from PRD; maintain FR-ID traceability;
+  include priority and verification method
 - NFRs: make requirements measurable (e.g., "export completes in under 10
   seconds for documents up to 100 pages")
 - Security: apply Australian government security framework context where

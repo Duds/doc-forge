@@ -79,4 +79,4 @@ Electron would work, but it is heavier than necessary for Phase 0. The maturity 
 
 ---
 
-*Previous: [ADR Log](README.md) · Next: [NFRs](../nfrs.md)*
+*Previous: [ADR-0002](ADR-0002-docx-export-library-selection.md) · Next: [ADR-0004](ADR-0004-tiptap-editor-framework.md)*

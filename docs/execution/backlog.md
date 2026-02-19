@@ -71,6 +71,7 @@ Epics are in [epics/](epics/). Stories are in [stories/](stories/).
 ## Related
 
 - [PRD Lean](../conceptual/prd-lean.md) — Phase 0 requirements
+- [FRS](../architectural/frs.md) — Functional requirements specification; FR-ID traceability
 - [Roadmap](../planning/roadmap.md) — Phase sequencing and success criteria
 - [Solution Concept](../strategic/solution-concept.md) — Phase 0 architecture
 

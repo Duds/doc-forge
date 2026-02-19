@@ -10,7 +10,7 @@ alwaysApply: true
 
 1. **Strategic** — `docs/strategic/` (problem-statement, solution-concept, options-analysis, business-case, benefits-map)
 2. **Conceptual** — `docs/conceptual/` (conops, prd-lean)
-3. **Architectural** — `docs/architectural/` (principles, hla, adrs, nfrs, security-data)
+3. **Architectural** — `docs/architectural/` (principles, hla, adrs, frs, nfrs, security-data)
 4. **Planning** — `docs/planning/` (operating-model, roadmap, release-plan)
 5. **Execution** — `docs/execution/` (backlog, epics, stories)
 6. **Governance** — `docs/governance/` (RAIDD, gate-packs, change-control, benefits-tracking)

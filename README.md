@@ -21,7 +21,8 @@ An AI-native, semantically structured document creation platform. DocForge is de
 | PRD (Lean) | [docs/conceptual/prd-lean.md](docs/conceptual/prd-lean.md) | 🔴 Draft |
 | Principles | [docs/architectural/principles.md](docs/architectural/principles.md) | ⚪ Stub |
 | HLA | [docs/architectural/hla.md](docs/architectural/hla.md) | ⚪ Stub |
-| NFRs | [docs/architectural/nfrs.md](docs/architectural/nfrs.md) | ⚪ Stub |
+| FRS | [docs/architectural/frs.md](docs/architectural/frs.md) | 🔴 Draft |
+| NFRs | [docs/architectural/nfrs.md](docs/architectural/nfrs.md) | 🔴 Draft |
 | Security & Data | [docs/architectural/security-data.md](docs/architectural/security-data.md) | ⚪ Stub |
 | ADRs | [docs/architectural/adrs/](docs/architectural/adrs/) | 🔴 Draft |
 | Operating Model | [docs/planning/operating-model.md](docs/planning/operating-model.md) | ⚪ Stub |
