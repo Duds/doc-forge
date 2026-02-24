@@ -1,10 +1,10 @@
 ---
 title: EP-109 — Native application menu
 project: Folivm
-status: in progress
-version: 0.2
+status: done
+version: 0.3
 created: 2026-02-23
-updated: 2026-02-23
+updated: 2026-02-24
 depends_on:
   - docs/execution/epics/EP-006-tauri-desktop-shell.md
   - docs/architectural/hla.md
@@ -61,11 +61,13 @@ Implementation is in `src/setupNativeMenu.ts` and `src/hooks/useMenuActions.ts`.
 | Window | Minimise | Done | PredefinedMenuItem |
 | Window | Close Window | Done | PredefinedMenuItem |
 
-### Dummy or placeholder
+### Implemented (Help menu)
 
 | Menu | Item | Status | Notes |
 |------|------|--------|-------|
-| Help | Keyboard Shortcuts | Dummy | Shows `alert()` with partial list; needs proper reference panel/modal (US-096) |
+| Help | Keyboard Shortcuts | Done | Reference modal (US-096) |
+| Help | Documentation | Done | External link via opener plugin |
+| Help | Support | Done | External link via opener plugin |
 
 ### Not implemented (blocked or deferred)
 
@@ -76,16 +78,13 @@ Implementation is in `src/setupNativeMenu.ts` and `src/hooks/useMenuActions.ts`.
 | File | Close Tab | Blocked | Requires EP-111 (document tabs) |
 | File | Save As | Deferred | Future |
 | Edit | Replace | Not in menu | Replace is in search panel; no dedicated Replace menu item |
-| Help | Documentation | Not implemented | External link (US-096) |
-| Help | Support | Not implemented | External link (US-096) |
 | Window | Zoom (native) | Not in menu | View has zoom; native zoom not added |
 | Window | Bring all to front | Not in menu | Future |
 
-### Focus for completion
+### Remaining (optional)
 
-1. **US-096** — Help menu: replace Keyboard Shortcuts alert with proper reference panel; add Documentation and Support links
-2. **EP-111** — Add Close Tab to File menu when tabs exist
-3. (Optional) About Folivm submenu with app info
+1. **EP-111** — Add Close Tab to File menu when tabs exist
+2. (Optional) About Folivm submenu with app info
 
 ---
 
@@ -100,7 +99,7 @@ Implementation is in `src/setupNativeMenu.ts` and `src/hooks/useMenuActions.ts`.
 - US-093: Define and wire native menu structure — **Done**
 - US-094: File menu items (project, document, export) — **Done** (Close tab blocked on EP-111)
 - US-095: Edit and View menu items — **Done** (Replace not in menu; in search panel)
-- US-096: Help menu and keyboard shortcut reference — **In progress** (Keyboard Shortcuts is dummy; Documentation, Support missing)
+- US-096: Help menu and keyboard shortcut reference — **Done**
 
 ## Related
 

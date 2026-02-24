@@ -26,7 +26,7 @@ Immediate and upcoming tasks. For the full backlog, see [docs/execution/backlog.
 - [x] Project creation with folder schema
 - [x] Open project; list documents
 - [x] Load and save documents to project folder
-- [ ] Autosave: implement debounced save when autosave toggle is enabled (toggle UI in window chrome; wire to save flow)
+- [x] Autosave: implement debounced save when autosave toggle is enabled (toggle UI in window chrome; wire to save flow)
 
 ### Export (EP-004)
 - [x] Integrate Pandoc CLI for PDF export (with path fallback for Homebrew)

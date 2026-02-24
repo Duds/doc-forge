@@ -1,10 +1,10 @@
 ---
 title: US-097 — Empty canvas layout and Folivm watermark
 project: Folivm
-status: draft
-version: 0.1
+status: done
+version: 0.2
 created: 2026-02-23
-updated: 2026-02-23
+updated: 2026-02-24
 epic: EP-110
 ---
 
@@ -16,9 +16,9 @@ epic: EP-110
 
 ## Acceptance Criteria
 
-- [ ] When no document is open: no page outline, shadow, or paper container
-- [ ] Folivm watermark: large, low-opacity wordmark or logo, centred
-- [ ] Layout is aesthetically balanced
+- [x] When no document is open: no page outline, shadow, or paper container
+- [x] Folivm watermark: large, low-opacity wordmark or logo, centred
+- [x] Layout is aesthetically balanced
 
 ## Epic
 

@@ -183,6 +183,15 @@
   --layout-canvas-max-width: 720px;
   --layout-rail-width: 40px;
 
+  /* Sidebar tree (file-explorer style) — spacing, padding, margins */
+  --layout-sidebar-icon-bar-height: 32px;
+  --layout-sidebar-icon-gap: 12px;
+  --layout-sidebar-tree-line-height: 22px;
+  --layout-sidebar-tree-indent: 18px;
+  --layout-sidebar-tree-icon-text-gap: 6px;
+  --layout-sidebar-tree-item-padding-y: 4px;
+  --layout-sidebar-tree-item-padding-x: 8px;
+
   /* Shadows */
   --shadow-canvas: var(--primitive-shadow-md);
   --shadow-popover: var(--primitive-shadow-lg);

@@ -1,10 +1,10 @@
 ---
 title: EP-110 — Empty editor canvas
 project: Folivm
-status: draft
-version: 0.1
+status: done
+version: 0.2
 created: 2026-02-23
-updated: 2026-02-23
+updated: 2026-02-24
 depends_on:
   - docs/execution/epics/EP-008-ui-scaffold.md
   - docs/execution/ui-scaffold-prompt.md

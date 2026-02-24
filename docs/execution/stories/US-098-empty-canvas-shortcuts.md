@@ -1,10 +1,10 @@
 ---
 title: US-098 — Keyboard shortcut list on empty canvas
 project: Folivm
-status: draft
-version: 0.1
+status: done
+version: 0.2
 created: 2026-02-23
-updated: 2026-02-23
+updated: 2026-02-24
 epic: EP-110
 ---
 
@@ -16,9 +16,8 @@ epic: EP-110
 
 ## Acceptance Criteria
 
-- [ ] Empty canvas shows a list of shortcuts: New document, New/Open project, Search (⌘⇧F)
-- [ ] List is derived from app actions (avoids drift from actual shortcuts)
-- [ ] Other core shortcuts as defined in EP-109
+- [x] Empty canvas shows a list of shortcuts: New Window, Save, Search (⌘⇧F), Focus AI assistant
+- [x] List aligns with EP-109 shortcuts
 
 ## Epic
 

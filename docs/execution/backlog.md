@@ -4,7 +4,7 @@ project: Folivm
 status: draft
 version: 0.4
 created: 2026-02-19
-updated: 2026-02-23
+updated: 2026-02-25
 depends_on:
   - docs/conceptual/prd-lean.md
   - docs/planning/roadmap.md
@@ -49,8 +49,8 @@ Execution artefacts for Folivm, derived from the [PRD](../conceptual/prd-lean.md
 | [EP-006](epics/EP-006-tauri-desktop-shell.md) | Author can run Folivm as a local Tauri desktop application | Done | US-050–052 |
 | [EP-007](epics/EP-007-format-documentation.md) | Author has documented Folivm format and project conventions | Done | US-070–072 |
 | [EP-008](epics/EP-008-ui-scaffold.md) | Author works in a professional interface shell with design tokens, three-panel layout, and theme modes | Done | — (spec: [ui-scaffold-prompt](ui-scaffold-prompt.md)) |
-| [EP-109](epics/EP-109-native-application-menu.md) | Author uses native application menu for common actions | In progress | US-093–096 |
-| [EP-110](epics/EP-110-empty-editor-canvas.md) | Empty editor canvas shows Folivm watermark and shortcuts | Backlog | US-097–098 |
+| [EP-109](epics/EP-109-native-application-menu.md) | Author uses native application menu for common actions | Done | US-093–096 |
+| [EP-110](epics/EP-110-empty-editor-canvas.md) | Empty editor canvas shows Folivm watermark and shortcuts | Done | US-097–098 |
 | [EP-111](epics/EP-111-document-tabs.md) | Author can open multiple documents in tabs | Backlog | US-099–101 |
 | [EP-112](epics/EP-112-ai-assistant-extension.md) | AI assistant as optional extension | Backlog | US-102–104 |
 
@@ -64,7 +64,7 @@ Execution artefacts for Folivm, derived from the [PRD](../conceptual/prd-lean.md
 |----|-------|--------|---------------|
 | EP-101 | Users can share documents and collaborate (small team) | Backlog | — |
 | [EP-102](epics/EP-102-rag-project-folder.md) | Users can use RAG over project folder for LLM context | Backlog | — |
-| [EP-103](epics/EP-103-deck-mode-pptx-export.md) | Author can switch to deck mode and export PPTX | Backlog | Pair with EP-108 |
+| [EP-103](epics/EP-103-deck-mode-pptx-export.md) | Author can switch to deck mode and export PPTX | Backlog | Pair with EP-108. Stories: US-105–110 |
 | EP-104 | Users can deploy server-hosted or sync | Backlog | — |
 | EP-105 | Folivm AI managed LLM proxy service | Backlog | — |
 | EP-106 | Folivm Sync thin cloud sync for multi-device | Backlog | — |
@@ -111,9 +111,9 @@ Folivm's heading hierarchy is already the structural spine of every document —
 | [US-093](stories/US-093-native-menu-structure.md) | Define and wire native menu structure | Done |
 | [US-094](stories/US-094-file-menu-items.md) | File menu items | Done (Close tab blocked on EP-111) |
 | [US-095](stories/US-095-edit-view-menu-items.md) | Edit and View menu items | Done |
-| [US-096](stories/US-096-help-menu-shortcuts.md) | Help menu and keyboard shortcut reference | In progress (Keyboard Shortcuts dummy; Documentation, Support missing) |
-| [US-097](stories/US-097-empty-canvas-watermark.md) | Empty canvas layout and Folivm watermark | Backlog |
-| [US-098](stories/US-098-empty-canvas-shortcuts.md) | Keyboard shortcut list on empty canvas | Backlog |
+| [US-096](stories/US-096-help-menu-shortcuts.md) | Help menu and keyboard shortcut reference | Done |
+| [US-097](stories/US-097-empty-canvas-watermark.md) | Empty canvas layout and Folivm watermark | Done |
+| [US-098](stories/US-098-empty-canvas-shortcuts.md) | Keyboard shortcut list on empty canvas | Done |
 | [US-099](stories/US-099-document-tabs-ui.md) | Document tab bar UI | Backlog |
 | [US-100](stories/US-100-tab-state-unsaved.md) | Tab state and unsaved-change handling | Backlog |
 | [US-101](stories/US-101-explorer-opens-tab.md) | Explorer click opens or activates tab | Backlog |

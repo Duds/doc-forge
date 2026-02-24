@@ -118,6 +118,9 @@ export async function setupNativeMenu(): Promise<void> {
     text: "Help",
     items: [
       { id: "shortcuts", text: "Keyboard Shortcuts", action: () => menuAction("keyboard-shortcuts") },
+      await sep(),
+      { id: "documentation", text: "Documentation", action: () => menuAction("documentation") },
+      { id: "support", text: "Support", action: () => menuAction("support") },
     ],
   });
 

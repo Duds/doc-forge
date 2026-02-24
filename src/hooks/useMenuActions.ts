@@ -17,6 +17,9 @@ export interface MenuActionHandlers {
   setViewMode: (mode: "document" | "preview" | "outline") => void;
   setZoomLevel: (level: number | ((prev: number) => number)) => void;
   setLeftSidebarView: (view: "project" | "search") => void;
+  openKeyboardShortcuts: () => void;
+  openDocumentation: () => void;
+  openSupport: () => void;
 }
 
 interface MenuActionPayload {
@@ -74,12 +77,13 @@ export function useMenuActions(handlers: MenuActionHandlers): void {
           handlers.setLeftSidebarView("search");
           break;
         case "keyboard-shortcuts":
-          alert(
-            "Keyboard shortcuts:\n" +
-              "⌘⇧N  New Window\n" +
-              "⌘S   Save\n" +
-              "⌘⇧F  Search"
-          );
+          handlers.openKeyboardShortcuts();
+          break;
+        case "documentation":
+          handlers.openDocumentation();
+          break;
+        case "support":
+          handlers.openSupport();
           break;
       }
     });

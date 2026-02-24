@@ -34,11 +34,9 @@ created: 2026-02-22
 - Create project → author a real client doc → export PDF/DOCX
 - Note friction, bugs, or gaps; prioritise fixes
 
-### 2. Reference DOCX template (US-032)
+### 2. Reference DOCX template (US-032) — DONE
 
-- Export accepts `reference_docx` but UI always passes `null`
-- Add project-level config (e.g. `Folivm.yaml`) or settings UI for reference DOCX path
-- Align with Principle 10 (brand = CSS + reference DOCX)
+- Reference DOCX is wired: export reads `config.reference_docx`; modal (Settings → Reference DOCX) persists path to `Folivm.yaml`; choose/clear supported
 
 ### 3. Frontmatter editing (US-004)
 
@@ -53,10 +51,9 @@ created: 2026-02-22
 - Context: current document + selected project files
 - Suggestion UI with accept/reject
 
-### 5. Footnotes (EP-001 gap)
+### 5. Footnotes (EP-001) — DONE
 
-- FR-2.2 lists footnotes; not yet implemented
-- TipTap extension or custom node for Pandoc footnotes
+- `FootnoteExtension` and bubble menu insert/edit; serialises to Pandoc `^[content]` format
 
 ---
 
@@ -81,6 +78,7 @@ created: 2026-02-22
 
 ## Related Plans
 
+- [Feature Audit and Next Push Plan](feature-audit-and-next-push-plan.md) — Codebase audit and prioritised task list for the next push
 - [Scaffold Adoption Plan](scaffold-adoption-plan.md) — Product Engineer recommendations: path aliases, cn(), lucide-react, Radix Dialog/DropdownMenu, component extraction, Vellum aesthetics (Vite + Tauri + tokens.css only).
 
 ---

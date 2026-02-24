@@ -3,6 +3,7 @@ import { WelcomeScreen } from "@/components/shell/WelcomeScreen";
 import { WindowChrome } from "@/components/shell/WindowChrome";
 import { NewDocumentModal } from "@/components/modals/NewDocumentModal";
 import { ReferenceDocxModal } from "@/components/modals/ReferenceDocxModal";
+import { KeyboardShortcutsModal } from "@/components/modals/KeyboardShortcutsModal";
 import { useTheme } from "./ThemeProvider";
 import { useFolivmApp } from "./hooks/useFolivmApp";
 import { useMenuActions } from "./hooks/useMenuActions";
@@ -24,6 +25,9 @@ function App() {
     setViewMode: folivm.setViewMode,
     setZoomLevel: folivm.setZoomLevel,
     setLeftSidebarView: folivm.setLeftSidebarView,
+    openKeyboardShortcuts: folivm.openKeyboardShortcutsModal,
+    openDocumentation: folivm.openDocumentation,
+    openSupport: folivm.openSupport,
   });
 
   return (
@@ -140,6 +144,11 @@ function App() {
       />
         </>
       )}
+
+      <KeyboardShortcutsModal
+        open={folivm.showKeyboardShortcutsModal}
+        onOpenChange={folivm.setShowKeyboardShortcutsModal}
+      />
     </div>
   );
 }

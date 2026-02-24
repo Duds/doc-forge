@@ -30,7 +30,6 @@ interface LeftSidebarProps {
   expandedFolders: Set<string>;
   onExpandedFoldersChange: (folders: Set<string>) => void;
   collapsed: boolean;
-  wordCount: number;
   leftSidebarView: "project" | "search";
   onLeftSidebarViewChange: (view: "project" | "search") => void;
   searchQuery: string;
@@ -64,7 +63,6 @@ export function LeftSidebar({
   expandedFolders,
   onExpandedFoldersChange,
   collapsed,
-  wordCount,
   leftSidebarView,
   onLeftSidebarViewChange,
   searchQuery,
@@ -374,11 +372,6 @@ export function LeftSidebar({
           </ScrollArea.Root>
             </>
           )}
-          <div className="sidebar-footer">
-            <span className="word-count">
-              {currentDoc ? `${wordCount} words` : "—"}
-            </span>
-          </div>
         </div>
       </div>
     </aside>

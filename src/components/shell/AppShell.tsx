@@ -169,7 +169,6 @@ export function AppShell(props: AppShellProps) {
         expandedFolders={expandedFolders}
         onExpandedFoldersChange={onExpandedFoldersChange}
         collapsed={leftSidebarCollapsed}
-        wordCount={wordCount(docContent)}
         leftSidebarView={leftSidebarView}
         onLeftSidebarViewChange={onLeftSidebarViewChange}
         searchQuery={searchQuery}
@@ -226,6 +225,8 @@ export function AppShell(props: AppShellProps) {
         docContent={docContent}
         onDocContentChange={onDocContentChange}
         onSave={handleSave}
+        viewMode={viewMode}
+        zoomLevel={zoomLevel}
       />
       <RightPanel
         collapsed={rightSidebarCollapsed}
